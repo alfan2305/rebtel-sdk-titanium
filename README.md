@@ -27,6 +27,19 @@ Once the Rebtel SDK framework/library is in place, the complete
 Titanium module will be built and packaged as
 com.rebtel.sdk-iphone-[VERSION].zip.
 
+# Running (in Simulator)
+
+Setup the titanium.py alias, e.g.
+
+    export TIVERSION="3.2.0.GA"; 
+    alias titanium.py="${HOME}/Library/Application\ Support/Titanium/mobilesdk/osx/${TIVERSION}/titanium.py"
+    
+(Also see http://docs.appcelerator.com/titanium/latest/#!/guide/Legacy_Command-Line_Interface)
+    
+Run (just make sure you've set your Rebtel SDK credentials in the app.js, see [Usage](#usage) below)
+   
+    titanium.py run
+
 # Usage
 
 Get your Application Key and Application Secret at [developer.rebtel.com](http://developer.rebtel.com).

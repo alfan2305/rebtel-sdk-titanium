@@ -11,7 +11,8 @@ copyright: Copyright (c) 2013 by Rebtel Networks AB
 
 # Rebtel SDK specifics
 # rebtel_sdk_download_url is used by build.py
-rebtel_sdk_download_url: https://sdksandbox.rebtel.com/rebtelsdk-1.0.0-212dace.tar.bz2
+# Get the latest links from https://developer.rebtel.com/download/
+rebtel_sdk_download_url: http://download.rebtel.com/sdk/RebtelSDK-iOS-2.0.0-BETA-c13f14d.tar.bz2
 
 # these should not be edited
 name: rebtel-sdk

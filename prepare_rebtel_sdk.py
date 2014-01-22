@@ -25,10 +25,10 @@ def download_rebtel_sdk(url, dst_path):
         raise Error("Failed to download '%s' to '%s'" % (url, dst_path))
 
 def extract_revision_from_url(url):
-    pattern = "(.*)-([1-9]\.[0-9]\.[0-9])-([a-z0-9]{4,40})\.tar\.bz2$"
+    pattern = "(.*)-([1-9]\.[0-9]\.[0-9])-(BETA-)?([a-z0-9]{4,40})\.tar\.bz2$"
     m = re.match(re.compile(pattern), url)
-    if m and len(m.groups()) == 3:
-        return (m.group(2), m.group(3))
+    if m and len(m.groups()) == 4:
+        return (m.group(2), m.group(4))
     else:
         raise Exception("Could not extract version from url '%s'" % url)
 
@@ -46,7 +46,7 @@ def verify_version_file(sdk_path, expected_version, expected_revision):
     if not (mv and mr):
         raise Exception("Could not read VERSION file")
 
-    if not (mv.group(1) == expected_version) and (mr.group(1) == expected_revision):
+    if (mv.group(1) != expected_version) or (mr.group(1) != expected_revision):
       raise Exception("SDK version mismatch. Please clean out any previously downloaded files")
 
     log_i("Found existing Rebtel SDK (version: %s, rev: %s) in '%s'" % (expected_version, 
